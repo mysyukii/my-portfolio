@@ -58,35 +58,51 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="mx-auto flex max-w-6xl flex-col items-center px-6 pb-20 pt-20 text-center md:px-10 md:pt-28">
-        <div className="mb-6 inline-flex items-center rounded-full border border-blue-400/20 bg-blue-400/10 px-4 py-2 text-sm text-blue-300">
-          🚧 Currently building a Repair Booking App with Flutter & Supabase
-        </div>
+      <section className="mx-auto max-w-6xl px-6 pb-20 pt-20 md:px-10 md:pt-28">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <div className="text-center md:text-left">
+            <div className="mb-6 inline-flex items-center rounded-full border border-blue-400/20 bg-blue-400/10 px-4 py-2 text-sm text-blue-300">
+              🚧 Currently building a Repair Booking App with Flutter & Supabase
+            </div>
 
-        <h2 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
-          Hi, I&apos;m <span className="text-blue-400">Brixton</span>
-        </h2>
+            <h2 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
+              Hi, I&apos;m <span className="text-blue-400">Brixton</span>
+            </h2>
 
-        <p className="mt-6 max-w-2xl text-base leading-7 text-gray-300 md:text-lg">
-          I build modern web and mobile applications using React, Next.js,
-          Flutter, and Supabase. I like creating clean, functional, and
-          user-friendly digital experiences that actually solve real problems.
-        </p>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-gray-300 md:text-lg">
+              I build modern web and mobile applications using React, Next.js,
+              Flutter, and Supabase. I like creating clean, functional, and
+              user-friendly digital experiences that actually solve real
+              problems.
+            </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="#projects"
-            className="rounded-xl bg-blue-500 px-6 py-3 font-medium text-white transition hover:scale-[1.02] hover:bg-blue-400"
-          >
-            View Projects
-          </a>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row md:justify-start">
+              <a
+                href="#projects"
+                className="rounded-xl bg-blue-500 px-6 py-3 font-medium text-white transition hover:scale-[1.02] hover:bg-blue-400"
+              >
+                View Projects
+              </a>
 
-          <a
-            href="#contact"
-            className="rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-medium text-white transition hover:scale-[1.02] hover:bg-white/10"
-          >
-            Contact Me
-          </a>
+              <a
+                href="#contact"
+                className="rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-medium text-white transition hover:scale-[1.02] hover:bg-white/10"
+              >
+                Contact Me
+              </a>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-2xl" />
+              <img
+                src="/Brixton.png"
+                alt="Brixton"
+                className="relative h-64 w-64 rounded-full border border-white/10 object-cover shadow-2xl md:h-80 md:w-80"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
