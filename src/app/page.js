@@ -1,27 +1,46 @@
 "use client";
 
-const skills = [
-  "React",
-  "Next.js",
-  "Flutter",
-  "Supabase",
-  "Tailwind CSS",
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "Git",
-  "Responsive Design",
+const skillGroups = [
+  {
+    title: "Frontend",
+    items: ["React", "Next.js", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+  },
+  {
+    title: "Mobile",
+    items: ["Flutter"],
+  },
+  {
+    title: "Backend",
+    items: ["Supabase"],
+  },
+  {
+    title: "Tools",
+    items: ["Git", "VS Code", "Responsive Design"],
+  },
 ];
 
 const project = {
   title: "Repair Booking App",
   description:
-    "A mobile-first application I’m currently developing for repair service scheduling and request tracking. The project focuses on clean UI, smooth booking flow, and a practical experience for both customers and service providers.",
+    "A repair service booking app I’m currently building to help users schedule services, track requests, and manage repair workflows more smoothly.",
   tech: ["Flutter", "Supabase", "UI/UX"],
   status: "In Development",
   github: "",
   live: "",
 };
+
+const projectProgress = [
+  { label: "UI Design", value: "Done" },
+  { label: "Booking Flow", value: "In Progress" },
+  { label: "Supabase Integration", value: "In Progress" },
+  { label: "Admin Dashboard", value: "Planned" },
+];
+
+const learningNow = [
+  "Improving Flutter app structure and workflows",
+  "Building cleaner UI systems with Tailwind CSS",
+  "Exploring better Supabase integration for real projects",
+];
 
 export default function Home() {
   return (
@@ -50,6 +69,9 @@ export default function Home() {
             <a href="#skills" className="transition hover:text-white">
               Skills
             </a>
+            <a href="#learning" className="transition hover:text-white">
+              Learning
+            </a>
             <a href="#contact" className="transition hover:text-white">
               Contact
             </a>
@@ -70,10 +92,9 @@ export default function Home() {
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-gray-300 md:text-lg">
-              I build modern web and mobile applications using React, Next.js,
-              Flutter, and Supabase. I like creating clean, functional, and
-              user-friendly digital experiences that actually solve real
-              problems.
+              I build clean and practical web and mobile apps with React,
+              Next.js, Flutter, and Supabase. I’m focused on creating useful
+              systems that solve real problems and feel good to use.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row md:justify-start">
@@ -99,7 +120,7 @@ export default function Home() {
               <img
                 src="/Brixton.png"
                 alt="Brixton"
-                className="relative h-64 w-64 rounded-full border border-white/10 object-cover shadow-2xl md:h-80 md:w-80"
+                className="relative h-64 w-64 rounded-full border-4 border-blue-400/20 object-cover shadow-[0_0_40px_rgba(59,130,246,0.25)] md:h-80 md:w-80"
               />
             </div>
           </div>
@@ -117,19 +138,18 @@ export default function Home() {
               About Me
             </p>
             <h3 className="mb-5 text-3xl font-semibold text-white">
-              Building with purpose, not just vibes
+              Building with purpose
             </h3>
             <p className="text-gray-300 leading-7">
-              I&apos;m a developer focused on building practical applications
-              that solve real-world problems. I enjoy working with modern tools
-              like React, Flutter, and Supabase to create responsive, clean, and
+              I’m a developer focused on building practical applications that
+              solve real-world problems. I enjoy working with modern tools like
+              React, Flutter, and Supabase to create responsive, clean, and
               efficient user experiences.
             </p>
             <p className="mt-4 text-gray-300 leading-7">
-              Right now, I&apos;m developing a repair booking application that
-              lets users schedule services, track requests, and manage bookings
-              more smoothly. Little by little, brick by brick — that&apos;s how
-              real projects are built anyway.
+              Right now, I’m developing a repair booking application that lets
+              users schedule services, track requests, and manage bookings more
+              smoothly. Real progress is built one solid step at a time.
             </p>
           </div>
 
@@ -151,16 +171,16 @@ export default function Home() {
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                <p className="font-medium text-white">⚙️ Tech Stack</p>
+                <p className="font-medium text-white">⚙️ Main Stack</p>
                 <p className="mt-1 text-sm text-gray-400">
                   Flutter, Supabase, UI/UX design, responsive workflows.
                 </p>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                <p className="font-medium text-white">🧩 In Progress</p>
+                <p className="font-medium text-white">🎯 Goal</p>
                 <p className="mt-1 text-sm text-gray-400">
-                  Booking flow, request tracking, and service management system.
+                  Build a smooth booking flow with practical service management.
                 </p>
               </div>
             </div>
@@ -181,8 +201,8 @@ export default function Home() {
             Featured Work
           </h3>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-            Honest work in progress beats fake polish every single time. This is
-            the project I&apos;m actively building right now.
+            Honest work in progress beats fake polish. This is the main project
+            I&apos;m actively building right now.
           </p>
         </div>
 
@@ -195,7 +215,7 @@ export default function Home() {
                   🚧 UI in progress
                 </div>
                 <div className="rounded-xl border border-dashed border-white/15 bg-white/5 px-6 py-16 text-sm text-gray-400">
-                  Screenshots coming soon
+                  Add your app screenshot here soon
                 </div>
               </div>
             </div>
@@ -224,20 +244,21 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                  <p className="text-sm font-medium text-white">Current Goal</p>
-                  <p className="mt-2 text-sm text-gray-400">
-                    Refine the booking flow and connect service request handling.
-                  </p>
-                </div>
+              <div className="mt-8">
+                <h5 className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-400">
+                  Project Progress
+                </h5>
 
-                <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                  <p className="text-sm font-medium text-white">Next Step</p>
-                  <p className="mt-2 text-sm text-gray-400">
-                    Add screenshots, backend logic improvements, and polish the
-                    user dashboard.
-                  </p>
+                <div className="grid gap-3">
+                  {projectProgress.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 p-4"
+                    >
+                      <span className="text-sm text-white">{item.label}</span>
+                      <span className="text-sm text-gray-400">{item.value}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -291,15 +312,55 @@ export default function Home() {
           </h3>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {skills.map((skill, index) => (
+        <div className="grid gap-6 md:grid-cols-2">
+          {skillGroups.map((group, index) => (
             <div
               key={index}
-              className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-center text-gray-200 transition hover:-translate-y-1 hover:bg-white/10"
+              className="rounded-3xl border border-white/10 bg-white/5 p-6"
             >
-              {skill}
+              <h4 className="mb-4 text-xl font-semibold text-white">
+                {group.title}
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                {group.items.map((item, itemIndex) => (
+                  <span
+                    key={itemIndex}
+                    className="rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-gray-300"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* LEARNING */}
+      <section
+        id="learning"
+        className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20"
+      >
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-cyan-500/5">
+          <div className="mb-8 text-center">
+            <p className="mb-2 text-sm uppercase tracking-[0.2em] text-blue-400">
+              Currently Exploring
+            </p>
+            <h3 className="text-3xl font-semibold md:text-4xl">
+              What I&apos;m Learning
+            </h3>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {learningNow.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-white/10 bg-black/20 p-5 text-gray-300"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -317,7 +378,8 @@ export default function Home() {
           </h3>
           <p className="mx-auto mt-4 max-w-2xl text-gray-400 leading-7">
             Open to opportunities, collaboration, and projects worth building.
-            No fluff, no circus — just good work and good systems.
+            Based in the Philippines and always trying to make systems cleaner,
+            simpler, and more useful.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -346,6 +408,10 @@ export default function Home() {
               LinkedIn
             </a>
           </div>
+
+          <p className="mt-6 text-sm text-gray-500">
+            neroxsacre01@gmail.com
+          </p>
         </div>
       </section>
 
